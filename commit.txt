@@ -1,0 +1,13 @@
+    Fix the display of 'None' in the Volumes table                    
+    
+    The 'Attached To' column in the Volumes table was inconsistent with
+    the rest of the columns in that it did not display anything when a  
+    particular volume was not attached to any instances.
+
+    This change results in displaying the status of 'None' on the 
+    'Attached To' column as a dash[-].
+
+    The status is 'None' when a particular volume is not attached to any
+    instance.                                                 
+
+    Closes-Bug: #1743226 
