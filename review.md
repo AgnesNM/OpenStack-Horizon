@@ -6,9 +6,11 @@
 - Run the style check
 - Write the commit message
 - Commit them
-  <p>*git add .*
-  *git commit -m "commit messages"*</p>
-  **git commit -a should commit all changes. I tried it with a commit message and it gave an error.**
+  <p> 
+    *git add .*
+    *git commit -m "commit messages"*
+    **git commit -a should commit all changes. I tried it with a commit message and it gave an error.**
+  </p>
 - preview the change
 - submit it for review
 
