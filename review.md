@@ -5,14 +5,12 @@
 - Make changes
 - Run the style check
 - Write the commit message
-- Commit them
-  <p> 
-    *git add .*
-    *git commit -m "commit messages"*
-    **git commit -a should commit all changes. I tried it with a commit message and it gave an error.**
-  </p>
-- preview the change
-- submit it for review
+- Commit them  
+  - git add .*
+  - *git commit -m "commit messages"*
+  - **git commit -a should commit all changes. I tried it with a commit message and it gave an error.**  
+- Preview the change
+- Submit it for review
 
 
 
