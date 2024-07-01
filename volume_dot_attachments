@@ -1,0 +1,5 @@
+[{'id': '1', 'server_id': '1', 'device': '/dev/hda', 'attachment_id': '6061364b-6612-48a9-8fee-1a38fe072547', 'instance': <Server: server_1>}]
+[{'id': '1', 'server_id': '1', 'device': '/dev/hda', 'attachment_id': '6061364b-6612-48a9-8fee-1a38fe072547', 'instance': <Server: server_1>}]
+[{'id': '21023e92-8008-1234-8059-7f2293ff3889', 'server_id': '1', 'device': '/dev/hda', 'instance': <Server: server_1>}]
+[{'id': '7dcb47fd-07d9-42c2-9647-be5eab799ebe', 'server_id': '2', 'device': '/dev/hdb', 'instance': <Server: server_2>}]
+[{'id': '1', 'server_id': '1', 'device': '/dev/hda', 'attachment_id': '6061364b-6612-48a9-8fee-1a38fe072547'}]
