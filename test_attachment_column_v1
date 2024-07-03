@@ -1,0 +1,22 @@
+        import pdb;
+        pdb.set_trace()
+        @mock.patch.object(cinder, 'volume_get')
+        def test_attachment_column(self, mock_get):
+            volumes = self.cinder_volumes.list()
+
+            for volume in volumes:
+                for attachment in volume.attachments:
+                    attachment_id = attachment.get("attachment_id")
+                    self.assertEqual(attachment_id, ATTACHMENT_ID)
+                    self.assertFalse(not attachment_id, None)
+
+                    dev = attachment.get("device")
+                    instance = attachment.get("instance")
+                    if instance in attachment == None:
+                        print(instance)
+                        self.assertIsNone(instance, "-")
+                    else:
+                        link = "%(dev)s on %(instance)s"
+                        formatted = link % {"dev": dev, "instance": instance} 
+
+                        self.assertEqual(formatted, "dev/vda on admin-instance")
