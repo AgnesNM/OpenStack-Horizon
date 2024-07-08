@@ -5,3 +5,4 @@ Horizon uses the Python version installed globally in your laptop if installed l
 - The code imported mock, so we use mock.Mock
 - If I import Mock, as in from unittest.mock import Mock
 - If I import MagicMock, as in from unittest.mock import MagicMock
+- MagicMock - better used with context managers?
