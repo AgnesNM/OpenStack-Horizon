@@ -17,4 +17,4 @@ Horizon uses the Python version installed globally in your laptop if installed l
 -- Call your actual function/method under test
 -- Verify that your actual code interacted correctly with the mocks
 -- Assert on the results of your actual function
-
+OpenStack Horizon doesn't use models, instead we access various services via API calls. We would access volumes via the cinder api, for example.
