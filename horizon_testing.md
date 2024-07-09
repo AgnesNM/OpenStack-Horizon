@@ -8,4 +8,13 @@ Horizon uses the Python version installed globally in your laptop if installed l
 - MagicMock is an extension of Mock, and has more "bells and whistles" which could break your tests, or cause some to pass/fail due to default MagicMock behaviour.
 - MagicMock also has built in implementations to support magic methods?
 - MagicMock - better used with context managers?
+- Is mocking more like imitating the functionality of a function/class/library
+- What's the difference between mocking and patching?
+- Prerequisites, unittesting in python, mocking, Mock, MagicMock, and patching
+- Steps when mocking
+-- Set up mocks for dependencies
+-- Configure expected behavior of mocks
+-- Call your actual function/method under test
+-- Verify that your actual code interacted correctly with the mocks
+-- Assert on the results of your actual function
 
