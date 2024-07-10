@@ -1,0 +1,8 @@
+    @mock.patch.object(cinder, 'volume_get') #the object to be patched and the attribute name
+    def test_no_attachment(self, mock_no_attachment):
+        column = volume_tables.AttachmentColumn("attachments")
+        column.table = mock.Mock()
+        volume = mock_no_attachment.return_value # a mocked volume, which is the result of cinder.volume_get
+        volume.attachments = []
+        result = column.get_raw_data(volume)
+        self.assertIsNone(result)
