@@ -1,0 +1,7 @@
+    def test_attachment_column(self):
+        column = volume_tables.AttachmentColumn("attachments")
+        column.table = mock.MagicMock()
+        column.table.request = mock.MagicMock()
+        volume = mock.MagicMock(attachments = [])        
+        result = column.get_raw_data(volume)
+        self.assertIsNone(result, None)
