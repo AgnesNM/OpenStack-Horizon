@@ -23,7 +23,7 @@ Horizon uses the Python version installed globally in your laptop if installed l
 - I think we use patching when we want to mock something that we are importing from another part of the code.
 - @patch.object() takes two or three parameters: "The three argument form takes the **object to be patched**, **the attribute name** and the **object to replace the attribute with**"
 - When calling with the two argument form you *omit the replacement object*, and a mock is created for you and passed in as an extra argument to the decorated function
-- In our example, *@mock.patch.object(cinder, 'volume_get')* cinder is the object we want to patch, and 'volume_get' is its attribute.
+- In our example, *@mock.patch.object(cinder, 'volume_get')* "cinder" is the object we want to patch, and "volume_get" is its attribute.
     ```python
     @mock.patch.object(cinder, 'volume_get')
     def test_no_attachment(self, mock_no_attachment):
@@ -33,7 +33,7 @@ Horizon uses the Python version installed globally in your laptop if installed l
         result = column.get_raw_data(volume)
         self.assertIsNone(result, None)
     ```
-- *def test_no_attachment(self, mock_no_attachment):* mock_no_attachment is a mock which is the result of cinder.volume_get
-- We assign the result of mock_no_attachment to volume since, it's essentially volume information *volume = mock_no_attachment.return_value*
-- Pass volume (mocked volume info) to our real function, get_raw_data: *result = column.get_raw_data(volume)*
+- *def test_no_attachment(self, mock_no_attachment):* "mock_no_attachment" is a mock which is the result of "cinder.volume_get"
+- We assign the result of "mock_no_attachment" to "volume" since, it's essentially volume information *volume = mock_no_attachment.return_value*
+- Pass "volume" (mocked volume info) to our real function, "get_raw_data": *result = column.get_raw_data(volume)*
 - 
