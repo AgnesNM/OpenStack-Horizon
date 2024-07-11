@@ -17,5 +17,23 @@ Horizon uses the Python version installed globally in your laptop if installed l
 -- Call your actual function/method under test
 -- Verify that your actual code interacted correctly with the mocks
 -- Assert on the results of your actual function
-OpenStack Horizon doesn't use models, instead we access various services via API calls. We would access volumes via the cinder api, for example.
-I think we use patching when we want to mock something that we are importing from another part of the code, 
+  
+- OpenStack Horizon doesn't use models, instead we access various services via API calls. We would access volumes via the cinder api, for example.
+## Patching
+- I think we use patching when we want to mock something that we are importing from another part of the code.
+- @patch.object() takes two or three parameters: "The three argument form takes the **object to be patched**, **the attribute name** and the **object to replace the attribute with**"
+- When calling with the two argument form you *omit the replacement object*, and a mock is created for you and passed in as an extra argument to the decorated function
+- In our example, *@mock.patch.object(cinder, 'volume_get')* cinder is the object we want to patch, and 'volume_get' is its attribute.
+    ```python
+    @mock.patch.object(cinder, 'volume_get')
+    def test_no_attachment(self, mock_no_attachment):
+        column = volume_tables.AttachmentColumn("attachments") #an instance of the attachment column
+        volume = mock_no_attachment.return_value
+        volume.attachments = []
+        result = column.get_raw_data(volume)
+        self.assertIsNone(result, None)
+    ```
+- *def test_no_attachment(self, mock_no_attachment):* mock_no_attachment is a mock which is the result of cinder.volume_get
+- We assign the result of mock_no_attachment to volume since, it's essentially volume information *volume = mock_no_attachment.return_value*
+- Pass volume (mocked volume info) to our real function, get_raw_data: *result = column.get_raw_data(volume)*
+- 
