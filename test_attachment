@@ -1,0 +1,26 @@
+    import pdb
+    pdb.set_trace();
+    @mock.patch.object(api.nova, 'server_list')
+    @mock.patch.object(cinder, 'volume_get') #the object to be patched and the attribute name
+    def test_attachment(self, mock_attachment, mock_server):
+        column = volume_tables.AttachmentColumn("attachments")
+        column.table = mock.Mock()
+        volume = mock_attachment.return_value # a mocked volume, which is the result of cinder.volume_get
+        servers = mock_server.return_value
+        volume.attachments = [{'id': volume.id,
+                               'volume_id': volume.id,
+                               'volume_name': volume.name,
+                               "attachment_id": ATTACHMENT_ID,
+                               'instance': servers[0].name,
+                               'device': '/dev/vdb',
+                               'server_id': servers[0].id}]
+        attachments = volume.attachments[0]
+        
+        dev = attachments["device"]
+        instance = attachments["instance"]
+
+        link = "%(dev)s on %(instance)s"
+        formatted = link % {"dev": dev, "instance": instance}
+
+        result = column.get_raw_data(volume)
+        self.assertIn(formatted, result)
