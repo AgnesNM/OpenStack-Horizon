@@ -1,0 +1,68 @@
+<div ng-controller="horizon.app.core.images.DrawerController as drawerCtrl">
+
+  <hz-resource-property-list
+    resource-type-name="OS::Glance::Image"
+    item="item"
+    property-groups="[
+      ['name', 'id'],
+      ['visibility', 'protected'],
+      ['disk_format', 'size'],
+      ['min_disk', 'min_ram'],
+      ['checksum']]">
+  </hz-resource-property-list>
+<!--
+  <hz-resource-property
+  resource-type-name="OS::Glance::Image"
+  prop-name="os_hash_value"
+  item="item">
+</hz-resource-property> -->
+
+<!-- can't display value -->
+  <!-- <div class="col-md-6 detail">
+    <dl class="dl-horizontal">
+      <dt translate>os_hash_value</dt>
+      <dd>{$ item.os_hash_value $}</dd>
+    </dl>
+  </div> -->
+<!--
+  <div class="row" ng-if="drawerCtrl.metadataDefs">
+    <div class="col-md-6 detail">
+      <dl class="dl-horizontal">
+        <dt translate>os_hash_value</dt>
+        <dd>{$ item.os_hash_value $}</dd>
+      </dl>
+    </div>
+</div> -->
+
+
+<div class="row">
+  <div class="col-md-6 detail">
+    <dl class="dl-horizontal">
+      <div ng-repeat="prop in drawerCtrl.properties">
+        <dt title="{$ prop.os_hash_algo $}">{$ drawerCtrl.resourceType.label(prop.os_hash_algo) $}</dt>
+        <dd>{$ prop.os_hash_algo.value $}</dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<!-- <div class="row">  
+    <dl class="dl-horizontal">
+      <div ng-repeat="prop in drawerCtrl.image.properties">
+        <dt title="{$ prop.name $}">{$ drawerCtrl.resourceType.label(prop.name) $}</dt>
+        <dd>{$ prop.value $}</dd>
+      </div>
+    </dl>
+  </div>
+</div> -->
+
+
+  <div class="row" ng-if="drawerCtrl.metadataDefs">
+    <div class="col-sm-12">
+      <metadata-display
+        available="::drawerCtrl.metadataDefs"
+        existing="item.properties || item">
+      </metadata-display>
+    </div>
+  </div>
+</div>
