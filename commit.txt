@@ -11,3 +11,21 @@
     instance.                                                 
 
     Closes-Bug: #1743226 
+
+********************************
+
+Test for displayed volumes without attachments
+
+A test to check that the 'Attached To' column in the Volumes table
+displays a dash [-] when a particular volume is not attached
+to any instances.
+
+Closes-Bug: #1743226
+
+*********************************
+
+Displaying more properties in the image drawer
+
+Including checksum, os_hash_algo, and os_hash_value in the 
+properties displayed by the image drawer.
+
