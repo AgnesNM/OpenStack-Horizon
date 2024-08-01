@@ -66,3 +66,15 @@
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <dl class="dl-horizontal">
+      <div ng-repeat="prop in item.properties">
+        <dt title="{$ prop.name $}">{$ drawerCtrl.resourceType.label(prop.name) $}</dt>
+        <dd ng-if="prop.name === 'os_hash_value'">{$ prop.value $}</dd>
+        <dd ng-if="prop.name !== 'os_hash_value'">{$ prop.value $}</dd>
+      </div>
+    </dl>
+  </div>
+</div>
