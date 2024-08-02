@@ -91,3 +91,15 @@
     </div>
   </div>
 </div>
+  <div class="row" >
+    <div class="col-sm-12">
+      <dl class="dl-horizontal">
+        <div ng-repeat="(key,value) in item.properties">
+          <dt> {$ $index $}</dt>
+          <dt> {$ key$}</dt>
+          <dd>{$ value $}</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>
