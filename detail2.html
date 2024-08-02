@@ -78,3 +78,16 @@
     </dl>
   </div>
 </div>
+
+<!-- show all custom properties in the drawer -->
+  <div class="row" >
+    <div class="col-sm-12">
+      <dl class="dl-horizontal">
+        <div ng-repeat="(key,value) in item.properties">
+          <dt> {$ key$}</dt>
+          <dd>{$ value $}</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>
