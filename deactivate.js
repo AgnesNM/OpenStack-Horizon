@@ -18,3 +18,10 @@ getStatuses();
         }
       );
     }
+
+// Attempt 2
+
+    ctrl.imageStatusOptions = [
+      { label: gettext('Yes'), value: true },
+      { label: gettext('No'), value: false }
+    ];
