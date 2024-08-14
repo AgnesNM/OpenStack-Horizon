@@ -51,3 +51,23 @@
               </div>
             </div>
           </div>
+
+<!-- Attempt 5 -->
+
+        <div class="selected-source clearfix">
+          <div class="row form-group">
+            <div class="col-xs-6 col-sm-6">
+              <div class="form-group required">
+                <label class="control-label required" for="">
+                  <span translate>Deactivated</span>
+                  <span class="hz-icon-required fa fa-asterisk"></span>
+                </label>
+                <select class="form-control switchable ng-pristine ng-untouched ng-valid"
+                name="deactivated"
+                ng-model="ctrl.image.status"
+                ng-options="key as label for (key, label) in ctrl.imageStatuses">
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
