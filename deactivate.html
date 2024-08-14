@@ -36,3 +36,18 @@
             </div>
           </div>
         </div>
+
+<!-- Attempt 4 -->
+
+          <div class="form-group">
+            <label class="control-label required" translate>Deactivated</label>
+            <div class="form-field">
+              <div class="btn-group" name="deactivated">
+                <label class="btn btn-default"
+                       ng-repeat="option in ctrl.imageStatusOptions"
+                       ng-model="ctrl.image.status"
+                       ng-if="option.value === 'deactivate'"
+                       uib-btn-radio="option.value">{$ ::option.label $}</label>
+              </div>
+            </div>
+          </div>
