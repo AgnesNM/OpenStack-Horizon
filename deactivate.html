@@ -119,3 +119,34 @@
             </div>
           </div>
         </div>
+<!-- Show current status -->
+        <div class="col-xs-6 col-sm-6">
+          <div class="form-group">
+            <label class="control-label required" translate>Deactivate</label>
+            <div class="form-field">
+              <div class="btn-group" name="deactivated">
+                <label class="btn btn-default"
+                uib-btn-radio="">{$ ctrl.image.status $}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- Toggle between active and deactivated status -->
+        <div class="col-xs-6 col-sm-6">
+          <div class="form-group">
+            <label class="control-label required" translate>Status</label>
+            <div class="form-field">
+              <div class="btn-group" name="imageStatus">
+                <label class="btn btn-default"
+                       ng-model="ctrl.image.status"
+                       uib-btn-radio="'active'"
+                       ng-disabled="ctrl.image.status === 'active'">Active</label>
+                <label class="btn btn-default"
+                       ng-model="ctrl.image.status"
+                       uib-btn-radio="'deactivated'"
+                       ng-disabled="ctrl.image.status === 'deactivated'">Deactivate</label>
+              </div>
+            </div>
+          </div>
+        </div>
