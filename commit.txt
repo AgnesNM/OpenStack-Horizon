@@ -29,3 +29,11 @@ Displaying more properties in the image drawer
 Including checksum, os_hash_algo, and os_hash_value in the 
 properties displayed by the image drawer.
 
+******************************
+
+Adding the deactivate functionality to edit image
+
+Adding the functionality to deactivate an image when
+you click 'edit image'.
+
+
