@@ -132,7 +132,7 @@
           </div>
         </div>
 
-<!-- Toggle between active and deactivated status -->
+<!-- Toggle between active and deactivated status; hard coded, ng-repeat would be a better option -->
         <div class="col-xs-6 col-sm-6">
           <div class="form-group">
             <label class="control-label required" translate>Status</label>
@@ -146,6 +146,22 @@
                        ng-model="ctrl.image.status"
                        uib-btn-radio="'deactivated'"
                        ng-disabled="ctrl.image.status === 'deactivated'">Deactivate</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!--  this is a beetr option, but but it doesn't work with chrome -->
+
+        <div class="col-xs-6 col-sm-6">
+          <div class="form-group">
+            <label class="control-label required" translate>Status</label>
+            <div class="form-field">
+              <div class="btn-group" name="status">
+                <label class="btn btn-default"
+                       ng-repeat="option in ctrl.imageStatusOptions"
+                       ng-model="ctrl.image.status"
+                       uib-btn-radio="option.value">{$ ::option.label $}</label>
               </div>
             </div>
           </div>
