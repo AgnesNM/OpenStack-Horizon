@@ -166,3 +166,18 @@
             </div>
           </div>
         </div>
+
+<!-- a better option? -->
+
+        <div class="col-xs-6 col-sm-6">
+          <div class="form-group">
+            <label class="control-label required" translate>Status</label>
+            <div class="form-field">
+              <div class="btn-group" name="status">
+                <label class="btn btn-default"
+                       ng-repeat="option in ctrl.imageStatusOptions"
+                       ng-model="ctrl.image.status"
+                       uib-btn-radio="option.value">{$ ::option.label $}</label>
+              </div>
+            </div>
+          </div>
