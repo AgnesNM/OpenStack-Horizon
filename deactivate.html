@@ -1,183 +1,27 @@
-<!-- Attempt 1 -->
-<div class="form-field">
-              <div class="btn-group" name="status">
-                <label class="btn btn-default"
-                       ng-repeat="option in ctrl.imageStatusOptions"
-                       ng-model="ctrl.image.status"
-                       uib-btn-radio="option.value">{$ ::option.label $}</label>
-              </div>
-            </div>
+<div ng-controller="horizon.app.core.images.steps.DeactivateImageController as ctrl">
+  <div class="content">
+    
+    <h4 translate>Status</h4>
 
-<!-- Attempt 2 -->
-
-        <div class="col-xs-6 col-sm-6">
-          <div class="form-group">
-            <label class="control-label required" translate>Status</label>
-            <div class="form-field">
-            <div class="btn-group" ng-model="ctrl.image.status"
-            ng-options="key as label for (key, label) in ctrl.imageStatusOptions">
-            </div>
-          </div>
-          </div>
-        </div>
-
-<!-- Attempt 3 -->
-
-        <div class="col-xs-6 col-sm-6">
-          <div class="form-group">
-            <label class="control-label required" translate>Deactivated</label>
-            <div class="form-field">
-              <div class="btn-group" name="deactivated">
-                <label class="btn btn-default"
-                       ng-repeat="option in ctrl.imageStatusOptions"
-                       ng-model="ctrl.image.status"
-                       uib-btn-radio="option.value">{$ ::option.label $}</label>
-              </div>
-            </div>
-          </div>
-        </div>
-
-<!-- Attempt 4 -->
-
-          <div class="form-group">
-            <label class="control-label required" translate>Deactivated</label>
-            <div class="form-field">
-              <div class="btn-group" name="deactivated">
-                <label class="btn btn-default"
-                       ng-repeat="option in ctrl.imageStatusOptions"
-                       ng-model="ctrl.image.status"
-                       ng-if="option.value === 'deactivate'"
-                       uib-btn-radio="option.value">{$ ::option.label $}</label>
-              </div>
-            </div>
-          </div>
-
-<!-- Attempt 5 -->
-
-        <div class="selected-source clearfix">
-          <div class="row form-group">
-            <div class="col-xs-6 col-sm-6">
-              <div class="form-group required">
-                <label class="control-label required" for="">
-                  <span translate>Deactivated</span>
-                  <span class="hz-icon-required fa fa-asterisk"></span>
-                </label>
-                <select class="form-control switchable ng-pristine ng-untouched ng-valid"
-                name="deactivated"
-                ng-model="ctrl.image.status"
-                ng-options="key as label for (key, label) in ctrl.imageStatuses">
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-
-<!-- Attempt 6 -->
-        <div class="col-xs-6 col-sm-6">
-          <div class="form-group">
-            <label class="control-label required" translate>Deactivated</label>
-            <div class="form-field">
-              <div class="btn-group" name="deactivated">
-                <label class="btn btn-default"
-                       ng-repeat="option in ctrl.imageStatuses"
-                       ng-model="ctrl.image.status"
-                       uib-btn-radio="option.value">{$ ::option.label $}</label>
-              </div>
-            </div>
-          </div>
-        </div>
-
-<!-- Attempt 7 -->
-
-        <div class="col-xs-6 col-sm-6">
-          <div class="form-group">
-            <label class="control-label required" translate>Deactivated</label>
-            <div class="form-field">
-              <div class="btn-group" name="deactivated">
-                <label class="btn btn-default"
-                      ng-options="key as label for (key, label) in ctrl.imageStatuses"
-                       ng-model="ctrl.image.status"
-                       uib-btn-radio="option.value">{$ ::option.label $}</label>
-              </div>
-            </div>
-          </div>
-        </div>
-
-<!-- Attempt 8 -->
-
-        <div class="col-xs-6 col-sm-6">
-          <div class="form-group">
-            <label class="control-label required" translate>Deactivated</label>
-            <div class="form-field">
-              <div class="btn-group" name="deactivated">
-                <label class="btn btn-default"
-                       ng-repeat="option in ctrl.statuses"
-                       ng-model="ctrl.image_status"
-                       ng-change="ctrl.setStatuses()"
-                       uib-btn-radio="option.value">{$ ::option.label $}</label>
-              </div>
-            </div>
-          </div>
-        </div>
-<!-- Show current status -->
-        <div class="col-xs-6 col-sm-6">
-          <div class="form-group">
-            <label class="control-label required" translate>Deactivate</label>
-            <div class="form-field">
-              <div class="btn-group" name="deactivated">
-                <label class="btn btn-default"
-                uib-btn-radio="">{$ ctrl.image.status $}</label>
-              </div>
-            </div>
-          </div>
-        </div>
-
-<!-- Toggle between active and deactivated status; hard coded, ng-repeat would be a better option -->
-        <div class="col-xs-6 col-sm-6">
-          <div class="form-group">
-            <label class="control-label required" translate>Status</label>
-            <div class="form-field">
-              <div class="btn-group" name="imageStatus">
-                <label class="btn btn-default"
-                       ng-model="ctrl.image.status"
-                       uib-btn-radio="'active'"
-                       ng-disabled="ctrl.image.status === 'active'">Active</label>
-                <label class="btn btn-default"
-                       ng-model="ctrl.image.status"
-                       uib-btn-radio="'deactivated'"
-                       ng-disabled="ctrl.image.status === 'deactivated'">Deactivate</label>
-              </div>
-            </div>
-          </div>
-        </div>
-
-<!--  this is a beetr option, but but it doesn't work with chrome -->
-
+    <div class="selected-source clearfix">
+      <div class="row">
         <div class="col-xs-6 col-sm-6">
           <div class="form-group">
             <label class="control-label required" translate>Status</label>
             <div class="form-field">
               <div class="btn-group" name="status">
-                <label class="btn btn-default"
-                       ng-repeat="option in ctrl.imageStatusOptions"
-                       ng-model="ctrl.image.status"
-                       uib-btn-radio="option.value">{$ ::option.label $}</label>
+                <label
+                  class="btn btn-default"
+                  ng-repeat="option in ctrl.imageStatusOptions"
+                  ng-model="ctrl.image.status"
+                  uib-btn-radio="option.value"
+                  >{$ ::option.label $}</label
+                >
               </div>
             </div>
           </div>
         </div>
-
-<!-- a better option? -->
-
-        <div class="col-xs-6 col-sm-6">
-          <div class="form-group">
-            <label class="control-label required" translate>Status</label>
-            <div class="form-field">
-              <div class="btn-group" name="status">
-                <label class="btn btn-default"
-                       ng-repeat="option in ctrl.imageStatusOptions"
-                       ng-model="ctrl.image.status"
-                       uib-btn-radio="option.value">{$ ::option.label $}</label>
-              </div>
-            </div>
-          </div>
+      </div>
+    </div>
+  </div>
+</div>
