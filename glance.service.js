@@ -39,7 +39,7 @@
       getImage: getImage,
       createImage: createImage,
       updateImage: updateImage,
-      deactivateImage:deactivateImage,
+      deactivateImage : deactivateImage,
       deleteImage: deleteImage,
       getImageProps: getImageProps,
       editImageProps: editImageProps,
