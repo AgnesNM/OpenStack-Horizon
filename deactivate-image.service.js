@@ -26,7 +26,7 @@
     'horizon.framework.util.actions.action-result.service',
     'horizon.framework.util.i18n.gettext',
     'horizon.framework.util.q.extensions',
-    'horizon.framework.widgets.modal.simpleModalService',
+    'horizon.framework.widgets.modal.simple-modal.service',
     'horizon.framework.widgets.toast.service',
     'horizon.app.core.images.resourceType'
   ];
