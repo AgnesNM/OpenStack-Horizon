@@ -141,7 +141,7 @@ class DeactivateImage(tables.LinkAction):
             
         )
 
-    policy_rules = (("image", "deactivate_image"),)
+    policy_rules = (("image", "deactivate"),)
 
     def allowed(self, request, image=None):
         # Protected images can not be deactivated
