@@ -121,7 +121,7 @@ class DeleteImage(tables.DeleteAction):
         api.glance.image_delete(request, obj_id)
 
 
-// returns a localhost:8000 connection error
+#returns a localhost:8000 connection error
 class DeactivateImage(tables.LinkAction):
     
     # will add appropriate help text to some batch/delete actions.
