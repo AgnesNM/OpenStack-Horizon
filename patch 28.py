@@ -26,3 +26,15 @@ Or undo this operation with:
 Turn off this advice by setting config variable advice.detachedHead to false
 
 HEAD is now at e36305948 Adding the deactivate functionality to edit image
+
+*****************************
+From https://review.opendev.org/openstack/horizon
+ * branch                refs/changes/79/926379/28 -> FETCH_HEAD
+Auto-merging openstack_dashboard/static/app/core/images/actions/edit.action.service.js
+On branch glance-deactivate-image
+You are currently cherry-picking commit e36305948.
+  (all conflicts fixed: run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Untracked files:
