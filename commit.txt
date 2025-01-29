@@ -36,4 +36,15 @@ Adding the deactivate functionality to edit image
 Adding the functionality to deactivate an image when
 you click 'edit image'.
 
+***********************
+
+Test for the deactivate/reactivate image feature
+
+A test to check that the deactivate image modal shows the correct
+labels, entities, and only allows for image deactivation if the
+image is not protected, has the correct policy and is not
+already deactivated.
+
+
+Closes-Bug: #926379
 
